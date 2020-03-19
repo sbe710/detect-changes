@@ -7,3 +7,9 @@ node_js:
 branches:
   only:
     - master
+
+deploy:
+  provider: heroku
+  app: "detect-changes"
+  api_key:
+    secure: "d79d76df-27a2-42ea-a380-bad56af8ea4c"
