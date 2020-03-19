@@ -1,15 +1,12 @@
 sudo: false
-
 language: node_js
 node_js:
-  - 9
-
+- 9
 branches:
   only:
-    - master
-
+  - master
 deploy:
   provider: heroku
-  app: "detect-changes"
+  app: detect-changes
   api_key:
-    secure: "7c869a84-1cf9-4b65-a996-e36454a2f17c"
+    secure: MoIO1zr1E3RL1J0RwaIulD2TtloiM3mk0io3YQStdkJDyCj30LLMrbQX1mbmeG2YP7etX7wpRo2T2smGhFWtspwZlTPQ7bxTnxklG4nlZKckvLgxOUpqZQP34zjiUrT7I35DQNOl7JJwwz5+wvnOhpbBQ9MJQdE3ZiMAqW50izYgZ9hPK3id2lZumjP/8Msy3ngOl9Udx0PSGrx2KqYM/bmIaYDdPGvciYZhhKOPuaj1kjl5G7xrVH+s0gpj6nZ5hG70/SsJwJqMGJ836kRPoWBh5SjLxfiYU0O8Sni3i4EUYkyWzmbS7pEh54kt+Bm1x43imlqHQ/ZBAFcT4j3/SyBKL6uoRuWCOax5NRUajoIeahsA0RFJG43DK0tJn8g3go4NyX+kQA/kRCHC6HEQIqYMYRCABWABdr60qtOY+Q3rIKhYXxAI1vSaXkNTpja3YUAWtMgxSApnF1222MVm+Sb4uerphO70tZcCxfrQQpxds3FZPa4JgIz8eCQkRrEdlPopD7tEvB8sCzdCmLbMq0XD2C37KxyQmPE4jX4LptUy/xydDQ0QBczFs9H32a0/v5eIrDMDPOjl2rrUTaS3c2xMEPGubv4q09KjXmRY+5jOESrwpJ3NL6noPexsIF9WFhGvtyAiUzysd3OJYEl9C2su/5y+yKQZE3KZB7l8LaI=
