@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.30",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-dom": "^16.13.0"
   },
+  "main": "index.tsx",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start:dev": "webpack-dev-server --mode development --config=configs/webpack/development.js",
+    "start:prod": "npm run lint && npm run clean:dist && npm prune && npm dedupe && webpack --progress -p --config=configs/webpack/production.js",
+    "bundle-analyzer": "BUNDLE_ANALYZER=true && webpack --progress -p --config=configs/webpack/production.js",
+    "clean": "rm -rfd node_modules webpack-bundle-analyzer.html && npm run clean:dist",
+    "clean:dist": "rm -rfd dist",
+    "configure": "npm install && ln -sfn ../src ./node_modules/@",
+    "lint": "tslint './src/**/*.ts*' --format stylish --force --fix",
+    "ncu": "npx npm-check-updates",
+    "ncu:update": "npx npm-check-updates -u",
+    "test": "exit 0 && jest --watch --coverage --config=configs/jest.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,25 +35,32 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
+    "@hot-loader/react-dom": "^16.13.0",
+    "@types/jest": "^24.9.1",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
+    "compression-webpack-plugin": "^3.1.0",
     "css-loader": "^3.4.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^6.0.0",
     "node-sass": "^4.13.1",
+    "react-hot-loader": "^4.12.20",
     "sass-loader": "^8.0.2",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.1.3",
     "tslint": "^6.1.0",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
+    "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   }
 }

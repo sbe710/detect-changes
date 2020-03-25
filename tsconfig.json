@@ -1,26 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "outDir": "./dist/",
+    "incremental": true,
+    "sourceMap": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["es5", "es6", "dom"],
+    "types": ["node"],
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "allowJs": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src",
-    "src/custom.d.ts"
-  ]
+  "include": ["./src/**/*"],
+  "awesomeTypescriptLoaderOptions": {
+    "reportFiles": ["./src/**/*"]
+  }
 }
