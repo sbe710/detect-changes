@@ -2,7 +2,7 @@
   "jsRules": {
     "class-name": true,
     "comment-format": [true, "check-space"],
-    "indent": [true, "spaces", 4],
+    "indent": [true, "tabs", 2],
     "no-duplicate-variable": true,
     "no-eval": true,
     "no-trailing-whitespace": true,
