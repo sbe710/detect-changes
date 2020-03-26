@@ -10,6 +10,7 @@
   "scripts": {
     "start:dev": "webpack-dev-server --mode development --open --config=configs/webpack/development.js",
     "start:prod": "npm run lint && npm run clean:dist && npm prune && npm dedupe && webpack --progress -p --config=configs/webpack/production.js",
+    "start": "npm run start:prod",
     "bundle-analyzer": "BUNDLE_ANALYZER=true && webpack --progress -p --config=configs/webpack/production.js",
     "clean": "rm -rfd node_modules webpack-bundle-analyzer.html && npm run clean:dist",
     "clean:dist": "rm -rfd dist",
