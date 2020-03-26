@@ -8,7 +8,7 @@
   },
   "main": "index.tsx",
   "scripts": {
-    "start:dev": "webpack-dev-server --mode development --config=configs/webpack/development.js",
+    "start:dev": "webpack-dev-server --mode development --open --config=configs/webpack/development.js",
     "start:prod": "npm run lint && npm run clean:dist && npm prune && npm dedupe && webpack --progress -p --config=configs/webpack/production.js",
     "bundle-analyzer": "BUNDLE_ANALYZER=true && webpack --progress -p --config=configs/webpack/production.js",
     "clean": "rm -rfd node_modules webpack-bundle-analyzer.html && npm run clean:dist",
